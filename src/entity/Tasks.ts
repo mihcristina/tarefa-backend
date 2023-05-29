@@ -1,5 +1,8 @@
 import { IsNull, Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm';
-@Entity()
+@Entity('tasks', {orderBy: {
+    finished: "ASC",
+    title: "ASC"
+}})
 export class Tasks{
     @PrimaryGeneratedColumn()
     id: number;
